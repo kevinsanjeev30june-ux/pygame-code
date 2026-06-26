@@ -4,37 +4,31 @@ import pygame
 # initalising pygame
 pygame.init()
 
-# creating display
-display = pygame.display.set_mode((300,300))
+# Create the display surface of object of specific dimension
+window = pygame.display.set_mode((700,700))
 
-# creating a running loop
-while True:
-    # Creating a loop check events that are occuring
+# Fill the screen with white color
+BACKGROUND_COLOR =(80,50,40)
+window.fill(BACKGROUND_COLOR)
+
+# Define colors
+BLUE =(0,0,255)
+
+# Draw solid circle
+pygame.draw.circle(window,BLUE,(300,300),50)
+
+# Draw outllined circle
+pygame.draw.circle(window,BLUE,(100,100),50,3)
+
+# Draw the surface object to the screen
+pygame.display.update()
+
+# Game loop
+running = True
+while running:
+    # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-
-        # checking if keydown event happened or not    
-        if event.type == pygame.KEYDOWN:
-            # if keydown event happened
-            # than printing a string as output
-            print("A key has been pressed")
-
-            if event.key == pygame.K_UP:
-                print("UP arrow key has been pressed")
-            if event.key == pygame.K_UP:
-                print("UP arrow key has been pressed")
-
-            if event.key == pygame.K_UP:
-                print("UP arrow key has been pressed")
-
-            elif event.key == pygame.K_DOWN:
-                print("DOWN arrow key has been pressed")
-
-            elif event.key == pygame.K_LEFT:
-                print("LEFT arrow key has been pressed")
-
-            elif event.key == pygame.K_RIGHT:
-                print("Right arrow key has been pressed")
-
+            running = False
+    # Quit pygame
+pygame.quit()           
