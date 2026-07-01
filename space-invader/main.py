@@ -150,7 +150,7 @@ while running:
     if bulletY <= 0:
         bulletY = PLAYER_START_Y
         bullet_state ="ready"
-    elif bullet_state == "FIRE":
+    elif bullet_state == "Fire":
         fire_bullet(bulletX , bulletY)  
         bulletY -= bulletY_change
 
